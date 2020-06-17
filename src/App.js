@@ -1,27 +1,23 @@
 import React from 'react';
-import Info from './info'
-import logo from './logo.svg';
+import Info from './Info';
+import Form from './Form';
+import logo from './logo.png';
 import './App.css';
+import Toast from './Toast';
 
 function App() {
-  console.log(Info);
-  let squats = new Info("Squats", 100);
-  console.log(squats.present());
+  console.log(Toast);
+  // let squats = new Info("Squats", 100);
+  let form = new Form();
+  let toast = new Toast("squats", 100);
+  console.log(toast.render());
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          {squats.present().value}
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {toast.render()}
+        {/* Rendering inputs */}
+        {form.render()}
       </header>
     </div>
   );
